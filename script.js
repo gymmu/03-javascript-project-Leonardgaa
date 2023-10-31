@@ -4,7 +4,17 @@ export function aufgabe01(args) {
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    result.push(currentElement)
+    
+    if (currentElement === "e") {
+      // mache nichts
+      }
+      else 
+      {
+       result.push(currentElement)
+      }
+    
   }
-  return result.join("")
+return result.join("")  
 }
+
+
