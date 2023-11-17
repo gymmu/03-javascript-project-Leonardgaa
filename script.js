@@ -62,13 +62,46 @@ export function aufgabe01(args) {
       if (currentElement === " ") {
         CountCurrentElement = CountCurrentElement + 1
       }
-      else {
-        result.push(currentElement)
-      }
+      
     }
     return CountCurrentElement
   }
 
+  export function aufgabe05 (args) {
+    const input = args
+    const result = []
+
+    let CountCurrentElement = 0
+
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+      if (currentElement === currentElement.toUpperCase()){ 
+        CountCurrentElement = CountCurrentElement + 1
+      } else {
+        result.push(currentElement)
+      }
+
+    }
+    
+    return result.join("")
+  }
+
+
+  export function  aufgabe09 (args) {
+    const input = args
+    const result = []
+    let len = 0
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+      len++
+    }
+    if (len === 6)  {
+      return true
+    }
+    return false
+    }
+    
+  
 
   
 
