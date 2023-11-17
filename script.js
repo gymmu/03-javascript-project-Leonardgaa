@@ -51,21 +51,22 @@ export function aufgabe01(args) {
     return CountE
   }
 
-  export function  aufgabe04 (args) {
-    const input = args
-    const result = []
-    
-    let CountCurrentElement = 1 
+  
+export function aufgabe04(args) {
+  const input = args;
+  const result = [];
 
-    for (let i = 0; i < input.length; i++) {
-      const currentElement = input[i]
-      if (currentElement === " ") {
-        CountCurrentElement = CountCurrentElement + 1
-      }
-      
+  let CountCurrentElement = 1;
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i];
+    if (currentElement === " ") {
+      CountCurrentElement = CountCurrentElement + 1;
     }
-    return CountCurrentElement
+
   }
+  return CountCurrentElement;
+}
 
   export function aufgabe05 (args) {
     const input = args
@@ -77,14 +78,13 @@ export function aufgabe01(args) {
       const currentElement = input[i]
       if (currentElement === currentElement.toUpperCase()){ 
         CountCurrentElement = CountCurrentElement + 1
-      } else {
-        result.push(currentElement)
+      } 
       }
 
     }
     
     return result.join("")
-  }
+  
 
 
   export function  aufgabe09 (args) {
@@ -102,7 +102,19 @@ export function aufgabe01(args) {
     }
     
   
+export function  aufgabe11 (args) {
+  const input = args
+  const result = []
 
+  if (input.length > 1) {
+    return null
+  }
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    return currentElement.charCodeAT(0)
+  }
+return null  
+}
   
 
 
