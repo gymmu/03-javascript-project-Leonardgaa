@@ -72,18 +72,17 @@ export function aufgabe04(args) {
     const input = args
     const result = []
 
-    let CountCurrentElement = 0
+    let CountcurrentElement = 0
 
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
       if (currentElement === currentElement.toUpperCase()){ 
-        CountCurrentElement = CountCurrentElement + 1
+        CountcurrentElement = CountcurrentElement + 1
       } 
-      }
-
+      }      
+      return CountcurrentElement
     }
     
-    return result.join("")
   
 
 
@@ -100,7 +99,29 @@ export function aufgabe04(args) {
     }
     return false
     }
+   
+export function aufgabe10 (args) {
+  const input = args
+  
+  if (input.length !== 7) return false
+  if (input[0] !== "#") return false
+  for (let i = 1; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAT(0)
+
+    if ( 48 <= ascii && ascii <= 57) {
+
+    }
+     else if ( 65 <= ascii && ascii <= 70){
+
+     }
+     else {
+    return false
+    }
     
+  }
+  return true
+  }
   
 export function  aufgabe11 (args) {
   const input = args
