@@ -81,7 +81,7 @@ export function aufgabe05 (args) {
 return false
 } 
 
-export function aufgabe06 (args) {
+export function aufgabe06(args) {
   const input = args
 
   if (input.length <= 0) return false
@@ -89,15 +89,39 @@ export function aufgabe06 (args) {
   for (let i = 0; i < input.length; i++) {
     const ascii = input[i].charCodeAt(0)
 
-    if(0 <= ascii && ascii <=47) return true
+    if(0 <= ascii && ascii <=31) return true
+    else if (33 <= ascii && ascii <= 47) return true
     else if (58 <= ascii && ascii <= 64) return true
     else if (91 <= ascii && ascii <= 96) return true
     else if (123 <= ascii && ascii <= 127) return true
   
   }
- return false
+  return false
 }
+  export function aufgabe07 (args) {
+    const input = args
+    const result = []
+
+    
+    
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+     
+    }
+    return result.join("")
+  }
+  export function aufgabe08(args) {
+    const input = args        
+    const result = []                     
   
+    for (let i = 0; i < input.length; i++) {      
+      const currentElement = input[i]        
+      if (currentElement === "e") {   
+        result.push(3)                                                           
+      } else {                                                 
+        result.push(currentElement)}
+  }
+}
 
   export function  aufgabe09 (args) {
     const input = args
@@ -132,7 +156,7 @@ export function aufgabe10 (args) {
     return false
     }
     
-  }
+    }
   return true
   }
   
@@ -146,11 +170,9 @@ export function  aufgabe11 (args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     return currentElement.charCodeAT(0)
-  }
-return null  
 }
-  
-
+  return null
+}
 
 
 
