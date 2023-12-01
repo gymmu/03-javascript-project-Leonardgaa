@@ -148,17 +148,15 @@ export function aufgabe10 (args) {
 
     if ( 48 <= ascii && ascii <= 57) {
 
-    }
-     else if ( 65 <= ascii && ascii <= 70){
+    } else if ( 65 <= ascii && ascii <= 70){
 
-     }
-     else {
-    return false
     }
-    
+      else {
+       return false
     }
-  return true
   }
+   return true
+}
   
 export function  aufgabe11 (args) {
   const input = args
@@ -173,8 +171,6 @@ export function  aufgabe11 (args) {
 }
   return null
 }
-
-
 
 
 
