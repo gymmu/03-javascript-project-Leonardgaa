@@ -101,11 +101,8 @@ export function aufgabe06(args) {
   export function aufgabe07 (args) {
     const input = args
     const result = []
-
-    
-    
     for (let i = 0; i < input.length; i++) {
-      const currentElement = input[i]
+    const currentElement = input[i]
      
     }
     return result.join("")
@@ -179,7 +176,28 @@ export function  aufgabe11 (args) {
     return -1
   }
 
+  export function aufgabe13 (args) {
+    const input = args
+    let posE = -1
+    for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+      if(currentElement === "e") {
+        posE = i
+      }
+    }
+    return posE
+   }
 
+   export function aufgabe14 (args) {
+    const input = args
+    let posE = -1
+    for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+      
+    }
+    return posE
+   }
 
+  
 
 
