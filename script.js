@@ -103,7 +103,7 @@ export function aufgabe06(args) {
     const result = []
     for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-     
+    
     }
     return result.join("")
   }
@@ -190,14 +190,30 @@ export function  aufgabe11 (args) {
 
    export function aufgabe14 (args) {
     const input = args
-    let posE = -1
+   let Count = 0
+    let posE= -1 
     for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-      
+  
+  
+  
+    if(currentElement=== "e"){
+     Count++
+     if (Count === 3) {
+      return i
+     }
     }
-    return posE
-   }
+  }
+  
+    return posE 
+  }
 
+  export function aufgabe15 (args) {
+    const input = args
+    const result = []
+    
+    return result.join("")
+  }
   
 
 
