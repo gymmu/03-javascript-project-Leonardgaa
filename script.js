@@ -119,9 +119,11 @@ export function aufgabe06(args) {
       if (currentElement === "e") {   
         result.push(3)                                                           
       } else {                                                 
-        result.push(currentElement)}
+        result.push(currentElement)
+      }
+    }
+    return result.join("")
   }
-}
 
   export function  aufgabe09 (args) {
     const input = args
@@ -160,17 +162,23 @@ export function aufgabe10 (args) {
   
 export function  aufgabe11 (args) {
   const input = args
-  const result = []
 
-  if (input.length > 1) {
-    return null
+  if(input.length !== 1) return null
+    return input[0].charCodeAt(0)
   }
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    return currentElement.charCodeAT(0)
-}
-  return null
-}
+
+  export function aufgabe12 (args) {
+    const input = args
+    const result = []
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+      if(currentElement == "e"){
+        return i
+      }
+    }
+    return -1
+  }
+
 
 
 
