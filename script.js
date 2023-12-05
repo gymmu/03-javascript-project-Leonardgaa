@@ -25,6 +25,7 @@ export function aufgabe01(args) {
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
       result.push(currentElement.toUpperCase())
+      // schreibe den Text in Grossbuchstaben
     }
     
     return result.join("")
@@ -68,6 +69,17 @@ export function aufgabe04(args) {
   return CountCurrentElement;
 }
 
+export function aufgabe04(text) {
+  // Ersetzt alle Sonderzeichen und Zahlen durch Leerzeichen
+  var words = text.replace(/[0-9]/g, ' ').replace(/[\W_]+/g, ' ');
+  // Teilt den Text in Wörter auf
+  var wordArray = words.split(' ');
+  // Entfernt leere Elemente aus dem Array
+  var filteredWords = wordArray.filter(function(el) { return el; });
+  // Gibt die Anzahl der Wörter zurück
+  return filteredWords.length;
+}
+
  
 export function aufgabe05 (args) {
   const input = args
@@ -98,20 +110,31 @@ export function aufgabe06(args) {
   }
   return false
 }
-  export function aufgabe07 (args) {
-    const input = args
-    const result = []
-    for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+  
     
-    }
-    return result.join("")
+export function aufgabe7 (args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+      if(currentElement === "u")  {
+        if (input[i + 1] === "n")   {
+          if (input[i + 2] === "d")   {
+            return true
+          }
+        }
+      }
   }
-  export function aufgabe08(args) {
+  return false
+}
+
+
+
+export function aufgabe08(args) {
     const input = args        
     const result = []                     
   
-    for (let i = 0; i < input.length; i++) {      
+  for (let i = 0; i < input.length; i++) {      
       const currentElement = input[i]        
       if (currentElement === "e") {   
         result.push(3)                                                           
@@ -211,9 +234,19 @@ export function  aufgabe11 (args) {
   export function aufgabe15 (args) {
     const input = args
     const result = []
+
+    for (let i = 0; i < input.length; i++) {
+      const ascii = input[i].charCodeAt(0)
+        if(118 === ascii && 110 === ascii && 100 === ascii)  {
+        return true
+        }
+    }
     
-    return result.join("")
+  return false
   }
+
+
+  
   
 
 
