@@ -60,25 +60,16 @@ export function aufgabe04(args) {
   let CountCurrentElement = 1;
 
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i];
+    const currentElement = input[i]
     if (currentElement === " ") {
-      CountCurrentElement = CountCurrentElement + 1;
+      CountCurrentElement = CountCurrentElement + 1
     }
 
   }
-  return CountCurrentElement;
+  return CountCurrentElement
 }
 
-export function aufgabe04(text) {
-  // Ersetzt alle Sonderzeichen und Zahlen durch Leerzeichen
-  var words = text.replace(/[0-9]/g, ' ').replace(/[\W_]+/g, ' ');
-  // Teilt den Text in Wörter auf
-  var wordArray = words.split(' ');
-  // Entfernt leere Elemente aus dem Array
-  var filteredWords = wordArray.filter(function(el) { return el; });
-  // Gibt die Anzahl der Wörter zurück
-  return filteredWords.length;
-}
+
 
  
 export function aufgabe05 (args) {
@@ -112,7 +103,7 @@ export function aufgabe06(args) {
 }
   
     
-export function aufgabe7 (args) {
+export function aufgabe07 (args) {
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
@@ -177,8 +168,8 @@ export function aufgabe10 (args) {
      }
    }
     
-    return true
-  }
+   return true
+}
   
 export function  aufgabe11 (args) {
   const input = args
@@ -213,40 +204,75 @@ export function  aufgabe11 (args) {
 
    export function aufgabe14 (args) {
     const input = args
-   let Count = 0
+    let Count = 0
     let posE= -1 
     for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
   
   
   
-    if(currentElement=== "e"){
-     Count++
-     if (Count === 3) {
-      return i
-     }
-    }
-  }
-  
-    return posE 
-  }
-
-  export function aufgabe15 (args) {
-    const input = args
-    const result = []
-
-    for (let i = 0; i < input.length; i++) {
-      const ascii = input[i].charCodeAt(0)
-        if(118 === ascii && 110 === ascii && 100 === ascii)  {
-        return true
+      if(currentElement=== "e"){
+      Count++
+        if (Count === 3) {
+        return i
         }
-    }
-    
-  return false
+      }
+    } 
+    return posE
   }
-
-
   
   
+export function aufgabe19 (args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+     result.push(currentElement)
+     result.push(currentElement)
+  }
+  return result.join("")
+}
 
 
+export function aufgabe20 (args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === ".") {
+      if (input [i+ 1 ]=== " ")   {
+        return true
+      }
+    } 
+  }
+  return false
+}
+
+export function aufgabe21 (args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === " ") {
+      if (input [i+ 1 ]=== ".")   {
+        return true
+      }
+    } 
+  }
+  return false
+}
+
+export function aufgabe27 (args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+    if (ascii === 48 <= ascii && ascii <= 57) {
+      return true
+    }
+  }
+  return false
+}
+
+ 
