@@ -36,6 +36,7 @@ export function aufgabe01(args) {
     const result = []
 
     let CountE = 0
+    // das ist der Counter für das Element E
 
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
@@ -50,6 +51,7 @@ export function aufgabe01(args) {
       
     }
     return CountE
+    //Der output zeigt wie viele E`s im input auftauchen
   }
 
   
@@ -63,6 +65,7 @@ export function aufgabe04(args) {
     const currentElement = input[i]
     if (currentElement === " ") {
       CountCurrentElement = CountCurrentElement + 1
+      // Wenn das aktuelle Element ein Leerzeichen ist addiere 1 dazu
     }
 
   }
@@ -79,6 +82,7 @@ export function aufgabe05 (args) {
     const currentAscii = input[i].charCodeAt(0)
    
     if (65 <= currentAscii && currentAscii <=90) return true
+    //Wenn
     
   }
 return false
@@ -106,9 +110,10 @@ export function aufgabe06(args) {
 export function aufgabe07 (args) {
   const input = args
   const result = []
+  i
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-      if(currentElement === "u")  {
+      if(currentElement === "u" || input[0] === "U")  {
         if (input[i + 1] === "n")   {
           if (input[i + 2] === "d")   {
             return true
@@ -234,6 +239,33 @@ export function aufgabe19 (args) {
 }
 
 
+export function aufgabe18 (args) {
+  const input = args
+  const inputName = []
+  const inputAge = []
+  let readText = true
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    
+    if (currentElement === " " && readText !== false) {
+      readText = false
+    } else {
+      if (readText === true) {
+        inputName.push(currentElement)
+      }
+      else if (readText === false) {
+        inputAge.push(currentElement)
+      }
+    }
+  }
+  if (inputName.join("") !== "" && inputAge.join("") !== "") return "Sie heissen " + inputName.join("") + " und sind " + inputAge.join("") + " Jahre alt"
+  if (inputName.join("") == "" && inputAge.join("") !== "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + " Jahre alt"
+  if (inputName.join("") !== "" && inputAge.join("") == "") return "Sie heissen " + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
+  if (inputName.join("") == "" && inputAge.join("") == "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
+}
+
+
 export function aufgabe20 (args) {
   const input = args
   const result = []
@@ -248,18 +280,51 @@ export function aufgabe20 (args) {
   return false
 }
 
-export function aufgabe21 (args) {
+export function aufgabe22 (args) {
   const input = args
   const result = []
+  const firstElement = " "
+  const secondElement = "k"
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+
     if (currentElement === " ") {
-      if (input [i+ 1 ]=== ".")   {
-        return true
-      }
-    } 
+      result.push("secondElement")
+    }
+    else {
+      result.push(currentElement)
+    }
   }
-  return false
+  return result.join("")
+}
+
+export function aufgabe23 (args) {
+  const input = args
+  const result = []
+  const firstElement = input[0]
+  result.push(firstElement)
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    result.push(currentElement)
+  }
+  result.push(firstElement)
+  return result.join("")
+}
+
+export function aufgabe24 (args) {
+  const input = args
+  const result = []
+  if (input.length === 1) return input
+  const firstElement = input[0]
+  const lastElement = input[input.length -1]
+
+  result.push(lastElement)
+  for (let i = 1; i < input.length -1; i++) {
+    const currentElement = input[i]
+    result.push(currentElement)
+  }
+  result.push(firstElement)
+  return result.join("")
 }
 
 export function aufgabe27 (args) {
