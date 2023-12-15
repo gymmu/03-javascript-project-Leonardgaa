@@ -54,23 +54,22 @@ export function aufgabe01(args) {
     //Der output zeigt wie viele E`s im input auftauchen
   }
 
+  export function aufgabe04(args) {
+    let input = args.replace(/[^a-zA-Z0-9 ]/g, "");
+  //entfernt alle Sonderzeichen aus dem Text
+    let count = 1;
+    if (input.lastIndexOf(' ') == input.length - 1) count--
+    if (input[0] == " ") count--
   
-export function aufgabe04(args) {
-  const input = args;
-  const result = [];
-
-  let CountCurrentElement = 1;
-
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (currentElement === " ") {
-      CountCurrentElement = CountCurrentElement + 1
-      // Wenn das aktuelle Element ein Leerzeichen ist addiere 1 dazu
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i];
+  
+      if (currentElement === " " && input[i-1] !== " ") {
+        count++
+      }
     }
-
-  }
-  return CountCurrentElement
-}
+    return count;
+  }
 
 
 
@@ -110,10 +109,9 @@ export function aufgabe06(args) {
 export function aufgabe07 (args) {
   const input = args
   const result = []
-  i
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-      if(currentElement === "u" || input[0] === "U")  {
+      if(currentElement === "u")  {
         if (input[i + 1] === "n")   {
           if (input[i + 2] === "d")   {
             return true
@@ -225,7 +223,61 @@ export function  aufgabe11 (args) {
     } 
     return posE
   }
+
+  export function aufgabe15(args) {
+    const input = args
+    const result = []
+    lastElement = input[input.length-1]
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+      if (currentElement === " ") {
+      break
+      }
+      else {
+        result.push(currentElement)
+      }
+      if (lastElement === " "){
+        break
+      }
+    }
+    return result.join("")
+  }
+
+  export function aufgabe16 (args) {
+    const input = args
+    const result1 = []
+    const result2 = []
+    let readText = true
   
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+      
+      if (currentElement === "$" && readText !== false) {
+        readText = false
+      } else {
+        if (readText === true) {
+          result1.push(currentElement)
+        }
+        else if (readText === false) {
+          result2.push(currentElement)
+        }
+      }
+    }
+    if (result2.join("") !== "") {
+    return result1.join("") + "," + result2.join("")
+    } else {
+      return result1.join("")
+    }
+  }
+  export function aufgabe17 (args) {
+    const input = args
+    const result = []
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+      
+    }
+    return result.join("")
+  }
   
 export function aufgabe19 (args) {
   const input = args
@@ -280,23 +332,39 @@ export function aufgabe20 (args) {
   return false
 }
 
+export function aufgabe21 (args) {
+  const input = args
+  const result = []
+  
+for (let i = 0; i < input.length; i++) {
+
+  result.push(input[input.length - 1 - i])
+  //Dreht den Text um und gibt ihn so wider. 
+}
+
+  return result.join("")
+}
+
 export function aufgabe22 (args) {
   const input = args
   const result = []
-  const firstElement = " "
-  const secondElement = "k"
+  let condition = false
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-
-    if (currentElement === " ") {
-      result.push("secondElement")
+    
+    if (currentElement === "k") {
+      condition = true
     }
-    else {
+    
+    if (condition === true) {
       result.push(currentElement)
+    } else {
+      result.push("_")
     }
   }
   return result.join("")
 }
+
 
 export function aufgabe23 (args) {
   const input = args
@@ -326,6 +394,8 @@ export function aufgabe24 (args) {
   result.push(firstElement)
   return result.join("")
 }
+
+
 export function aufgabe27 (args) {
   const input = args
   const result = []
@@ -342,16 +412,16 @@ export function aufgabe27 (args) {
 export function bubbleSort(args) {
   const input = args
   let result = []
-const list = input.split("")// sorgt dafür das der Code in eine Liste umgewndelt wird, so können die Elemente sortiert werden
+const list = input.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
 for (let i = 0; i < list.length - 1; i++) {
   const currentElement = list[i]
   const nextElement = list[i + 1]
   if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
-    //Wenn die Anordnung der Elemente nicht korrekt ist, werden die Elemente vertauscht
+    // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
     const tmp = list[i + 1]
     list[i + 1] = list[i]
     list[i] = tmp
-    i = -1// es wird von worne überprüft, ob die Zeichen sortiert sind
+    i = -1 // starte von vorne wenn etwas vertauscht wurde.
   }
 }
 result = list.join("")
