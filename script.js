@@ -237,10 +237,10 @@ export function  aufgabe11 (args) {
       if (currentElement === " ") {
       break// Wenn das aktuelle Element ein ' ' ist, wird der output widergegeben
       }
-      else {
-        result.push(currentElement)
-        // ansonsten gebe das aktuelle Element zurück
-      }
+        else {
+          result.push(currentElement)
+          // ansonsten gebe das aktuelle Element zurück
+        }
     }
     return result.join("")
   }
@@ -271,32 +271,33 @@ export function  aufgabe11 (args) {
       return result1.join("")
     }
   }
-  export function aufgabe17() {
-    const text = input[i]
-    const result = []
-    for (let i = 0; i < text.length; i++) {
-      result.push(text[i])
-      if (text[i] === ".") {
-        if (text.length - 1 === i) {
-          return [result.join(""), false]
-        } else {
-          return [result.join(""), true]
-        }
-      }
-    }
-    return [result.join(""), false]
-  }
   
-export function aufgabe19 (args) {
-  const input = args
-  const result = []
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-     result.push(currentElement)
-     result.push(currentElement)// Das aktuelle Element wird zweimal zurückgegeben
+  export function aufgabe17 (args) {
+    const input = args
+    const result = []
+    let countDot = 0
+    let list1 = []// Variable für 1. Liste
+    let list2 = []// Variable für 2. Liste
+    let list3 = []// Variable für 3. Liste
+    
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+      if (currentElement === ".") {
+        countDotcurrentElement = countDotcurrentElement +1// Wenn das aktuelle Element ein '.' ist, erhöhe den CountDot um 1
+      }
+      else if(countDot === 0) {
+        list1.push(currentElement)// Wenn das CountDot 0 ist, gebe das aktuelle Element in die 1. Liste ein
+      }
+      else if(countDot === 1) {
+        list2.push(currentElement)// Wenn das CountDot 1 ist, gebe das aktuelle Element in die 2. Liste ein
+      }
+      else if(countDot === 2) {
+        list3.push(currentElement)// Wenn das CountDot 2 ist, gebe das aktuelle Element in die 3. Liste ein
+      }
+        
+    }
+    return list1.join("") + list2.join("") + list3.join("")// Die 1. , 2. und 3. Liste werden hintereinander zurückgegebenen
   }
-  return result.join("")
-}
 
 
 export function aufgabe18 (args) {
@@ -322,8 +323,21 @@ export function aufgabe18 (args) {
   if (inputName.join("") !== "" && inputAge.join("") !== "") return "Sie heissen " + inputName.join("") + " und sind " + inputAge.join("") + " Jahre alt"
   if (inputName.join("") == "" && inputAge.join("") !== "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + " Jahre alt"
   if (inputName.join("") !== "" && inputAge.join("") == "") return "Sie heissen " + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
-  if (inputName.join("") == "" && inputAge.join("") == "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
+  if (inputName.join("") == "" && inputAge.join("") == "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt" 
+  // Umgeht einen Fehler, wenn die Eingabe leer ist
+
 }
+export function aufgabe19 (args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+     result.push(currentElement)
+     result.push(currentElement)// Das aktuelle Element wird zweimal zurückgegeben
+  }
+  return result.join("")
+}
+
 
 
 export function aufgabe20 (args) {
