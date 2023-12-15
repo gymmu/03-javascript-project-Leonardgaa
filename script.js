@@ -60,12 +60,13 @@ export function aufgabe01(args) {
     let count = 1;
     if (input.lastIndexOf(' ') == input.length - 1) count--
     if (input[0] == " ") count--
-  
+    // wenn das erste oder letzte Element ein Leerzeichen ist, wird das count um eins vermindert
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i];
   
       if (currentElement === " " && input[i-1] !== " ") {
         count++
+        // wenn das Element ein Leerzeichen ist, und das vorherige nicht ein Leerzeichen ist, wird der count um eins erhöht
       }
     }
     return count;
@@ -79,9 +80,10 @@ export function aufgabe05 (args) {
   
   for (let i = 0; i < input.length; i++) {
     const currentAscii = input[i].charCodeAt(0)
+    // Das Zeichen wird in einen Ascii-Wert umgewandelt
    
     if (65 <= currentAscii && currentAscii <=90) return true
-    //Wenn
+    //Wenn das Zeichen einen Ascii-Wert zwischen 65 und 90 besitzt, wird true zurückgegeben
     
   }
 return false
@@ -91,15 +93,18 @@ export function aufgabe06(args) {
   const input = args
 
   if (input.length <= 0) return false
+  // Wenn die Eingabe leer ist, wird false zurückgegeben
   
   for (let i = 0; i < input.length; i++) {
     const ascii = input[i].charCodeAt(0)
+    // Das Zeichen wird in einen Ascii-Wert verarbeitet
 
     if(0 <= ascii && ascii <=31) return true
     else if (33 <= ascii && ascii <= 47) return true
     else if (58 <= ascii && ascii <= 64) return true
     else if (91 <= ascii && ascii <= 96) return true
     else if (123 <= ascii && ascii <= 127) return true
+    //Wenn das Ascii-Wert zwischen 0 und 31, 33 und 47, 58 und 64, 91 und 96, 123 und 127 besitzt, wird true zurückgegeben
   
   }
   return false
@@ -111,7 +116,7 @@ export function aufgabe07 (args) {
   const result = []
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-      if(currentElement === "u")  {
+      if(currentElement === "u")  { //Wenn das Element 'u' ist und die darauffolgenden Element n und d sind wird true zurückgegeben
         if (input[i + 1] === "n")   {
           if (input[i + 2] === "d")   {
             return true
@@ -131,9 +136,9 @@ export function aufgabe08(args) {
   for (let i = 0; i < input.length; i++) {      
       const currentElement = input[i]        
       if (currentElement === "e") {   
-        result.push(3)                                                           
+        result.push(3)  // Das Element 'e' werden mit 3 ersetzt                                                         
       } else {                                                 
-        result.push(currentElement)
+        result.push(currentElement) // Die anderen Elemente werden nicht ersetzt
       }
     }
     return result.join("")
@@ -142,13 +147,13 @@ export function aufgabe08(args) {
   export function  aufgabe09 (args) {
     const input = args
     const result = []
-    let len = 0
+    let len = 0 // Zahl der Elemente
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
-      len++
+      len++ // zähle Elemente
     }
     if (len === 6)  {
-      return true
+      return true // Wenn die Anzahl der Elemente 6 ist, wird true zurückgegeben
     }
     return false
     }
@@ -156,18 +161,18 @@ export function aufgabe08(args) {
 export function aufgabe10 (args) {
    const input = args
   
-   if(input.length !== 7) return false
-   if(input[0] !== "#") return false
+   if(input.length !== 7) return false // Wenn die Anzahl der Elemente nicht 7 ist, wird false übergegeben
+   if(input[0] !== "#") return false// Wenn das erste Element nicht # ist, wird false zurückgegeben
    for (let i = 1; i < input.length; i++) {
      const currentElement = input[i]
-     const ascii = currentElement.charCodeAt(0)
+     const ascii = currentElement.charCodeAt(0) // Das aktuelle Element wird in einen Ascii code verwandelt
    
-    if(48 <= ascii && ascii <=57) {
+    if(48 <= ascii && ascii <=57) { // Wenn der Ascii code zwischen 48 und 57 ist, wird true zurückgegeben
          
-     } else if (65 <= ascii && ascii <= 70) {
+     } else if (65 <= ascii && ascii <= 70) {// Wenn der Ascii code zwischen 65 und 70 ist, wird true zurückgegeben
           
      } else {
-       return false
+       return false // Wenn der Ascii code nicht zwischen 48 und 57 oder 65 und 70 ist, wird false zurückgegeben
      }
    }
     
@@ -177,8 +182,8 @@ export function aufgabe10 (args) {
 export function  aufgabe11 (args) {
   const input = args
 
-  if(input.length !== 1) return null
-    return input[0].charCodeAt(0)
+  if(input.length !== 1) return null // Wenn die Länge der Elemente nicht 1 ist, wird null zurückgegeben
+    return input[0].charCodeAt(0)// das erste Element wird in einen Asciicode verwandelt
   }
 
   export function aufgabe12 (args) {
@@ -187,7 +192,7 @@ export function  aufgabe11 (args) {
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
       if(currentElement == "e"){
-        return i
+        return i// Wenn das Element 'e' ist, wird der Index zurückgegeben
       }
     }
     return -1
@@ -195,14 +200,14 @@ export function  aufgabe11 (args) {
 
   export function aufgabe13 (args) {
     const input = args
-    let posE = -1
+    let posE = -1//Die Postionen des 'e's ist -1
     for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
       if(currentElement === "e") {
-        posE = i
+        posE = i//Wenn das aktuelle Element ein 'e' ist, ist seine Position der Index
       }
     }
-    return posE
+    return posE // Die Position des 'E's wird zurückgegeben
    }
 
    export function aufgabe14 (args) {
@@ -215,9 +220,9 @@ export function  aufgabe11 (args) {
   
   
       if(currentElement=== "e"){
-      Count++
+      Count++ // Wenn das aktuelle Element ein e ist, erhöhe den Counter
         if (Count === 3) {
-        return i
+        return i// Wenn der Counter 3 erreicht hat, wird der Index zurückgegeben
         }
       }
     } 
@@ -227,17 +232,14 @@ export function  aufgabe11 (args) {
   export function aufgabe15(args) {
     const input = args
     const result = []
-    lastElement = input[input.length-1]
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
       if (currentElement === " ") {
-      break
+      break// Wenn das aktuelle Element ein ' ' ist, wird der output widergegeben
       }
       else {
         result.push(currentElement)
-      }
-      if (lastElement === " "){
-        break
+        // ansonsten gebe das aktuelle Element zurück
       }
     }
     return result.join("")
@@ -253,30 +255,36 @@ export function  aufgabe11 (args) {
       const currentElement = input[i]
       
       if (currentElement === "$" && readText !== false) {
-        readText = false
+        readText = false// Wenn das aktuelle Element ein '$' ist und readText nicht false ist, wird readText auf false gesetzt
       } else {
         if (readText === true) {
-          result1.push(currentElement)
+          result1.push(currentElement)// Wenn das aktuelle Element ein '$' ist und readText nicht false ist, wird readText auf false gesetzt
         }
         else if (readText === false) {
-          result2.push(currentElement)
+          result2.push(currentElement)// Wenn das aktuelle Element ein '$' ist und readText nicht false ist, wird readText auf false gesetzt
         }
       }
     }
-    if (result2.join("") !== "") {
+    if (result2.join("") !== "") {// Wenn das 2. Resultat nicht der input ist, gebe das 1. und das 2. Resultat zurück
     return result1.join("") + "," + result2.join("")
     } else {
       return result1.join("")
     }
   }
-  export function aufgabe17 (args) {
-    const input = args
+  export function aufgabe17() {
+    const text = input[i]
     const result = []
-    for (let i = 0; i < input.length; i++) {
-      const currentElement = input[i]
-      
+    for (let i = 0; i < text.length; i++) {
+      result.push(text[i])
+      if (text[i] === ".") {
+        if (text.length - 1 === i) {
+          return [result.join(""), false]
+        } else {
+          return [result.join(""), true]
+        }
+      }
     }
-    return result.join("")
+    return [result.join(""), false]
   }
   
 export function aufgabe19 (args) {
@@ -285,7 +293,7 @@ export function aufgabe19 (args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
      result.push(currentElement)
-     result.push(currentElement)
+     result.push(currentElement)// Das aktuelle Element wird zweimal zurückgegeben
   }
   return result.join("")
 }
@@ -304,10 +312,10 @@ export function aufgabe18 (args) {
       readText = false
     } else {
       if (readText === true) {
-        inputName.push(currentElement)
+        inputName.push(currentElement)// 
       }
       else if (readText === false) {
-        inputAge.push(currentElement)
+        inputAge.push(currentElement)// 
       }
     }
   }
@@ -325,7 +333,7 @@ export function aufgabe20 (args) {
     const currentElement = input[i]
     if (currentElement === ".") {
       if (input [i+ 1 ]=== " ")   {
-        return true
+        return true// Wenn das Element nach einem Punkt ein Leerzeichen ist, wird true zurückgegeben
       }
     } 
   }
@@ -353,13 +361,13 @@ export function aufgabe22 (args) {
     const currentElement = input[i]
     
     if (currentElement === "k") {
-      condition = true
+      condition = true// Wenn das aktuelle Element ein k ist, ist die Bedingung true
     }
     
     if (condition === true) {
-      result.push(currentElement)
+      result.push(currentElement)// Wenn die Bedingung true ist, gebe das aktuelle Element zurück
     } else {
-      result.push("_")
+      result.push("_")// Wenn die Bedingung nicht true ist, gebe ein "_" zurück
     }
   }
   return result.join("")
@@ -370,12 +378,12 @@ export function aufgabe23 (args) {
   const input = args
   const result = []
   const firstElement = input[0]
-  result.push(firstElement)
+  result.push(firstElement)// Das erstes Element wird hinzugefügt
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     result.push(currentElement)
   }
-  result.push(firstElement)
+  result.push(firstElement)//Das erste Element wird nochmal hinzugefügt
   return result.join("")
 }
 
@@ -386,12 +394,12 @@ export function aufgabe24 (args) {
   const firstElement = input[0]
   const lastElement = input[input.length -1]
 
-  result.push(lastElement)
+  result.push(lastElement)//Das letzte Element wird an den Anfang eingesetzt
   for (let i = 1; i < input.length -1; i++) {
     const currentElement = input[i]
     result.push(currentElement)
   }
-  result.push(firstElement)
+  result.push(firstElement)//Das erste Element wird am Ende eingesetzt
   return result.join("")
 }
 
@@ -403,7 +411,7 @@ export function aufgabe27 (args) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
     if (ascii === 48 <= ascii && ascii <= 57) {
-      return true
+      return true//Wenn der Ascii-Wert zwischen 48 und 57 ist, wird true zurückgegeben
     }
   }
   return false
@@ -412,7 +420,7 @@ export function aufgabe27 (args) {
 export function bubbleSort(args) {
   const input = args
   let result = []
-const list = input.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
+const list = input.split("") // so wird der Text in eine Liste umgewandelt
 for (let i = 0; i < list.length - 1; i++) {
   const currentElement = list[i]
   const nextElement = list[i + 1]
@@ -424,7 +432,7 @@ for (let i = 0; i < list.length - 1; i++) {
     i = -1 // starte von vorne wenn etwas vertauscht wurde.
   }
 }
-result = list.join("")
+result = list.join("")// Die Liste wird wieder in einen Text umgewandelt
   return result
 }
 
